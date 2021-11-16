@@ -34,9 +34,16 @@ data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_str
 ## Model 1 SIM~ARMS
 
 ### scatterplot
+```{r}
+plot(SIMS~ARM,data=data)
+```
+
+This scatter plot looks to be going more towards the right. So maybe it's a positive correlation. 
 
 ### Numerical results
-
+```{r}
+cor(SIMS~ARM,data=data)
+```
 
 ### Inferential  (Build model.1)
 
