@@ -52,16 +52,46 @@ model.1 <- lm(SIMS~ARM,data=data)
 summary.lm(model.1)
 ```
 
+The equation of a line is y=mx+b
+The fit equation is SIMS=0.054563*ARM-4.095160
 
 #### Predict at target point
 
+SIMS=0.054563*88-4.095160
+
+```{r}
+0.054563*88-4.095160
+```
+
+My prediction to this would be 0.706384. Since we plugged in 88 into ARM and it resulted in 0.706384
+
+```{r}
+new <- data.frame(ARM = 88,GRIP = 94)
+```
+
+```{r}
+predict(model.1,new)
+```
 
 #### scatterplot with model fit
-  
+```{r}
+basicNN <- ggplot(data,aes(y=SIMS,x=ARM))
+basicNN + geom_point()
+basicNN + geom_point() + geom_smooth(method=lm) 
+```
+
+This would be the best fit for our data. Now we can see that when looking for an x-value of 88 and a y-value of 0.7 it's predicted that it fell into place. 
 
 ## Model 2 SIM~GRIP
 
+
+
+
 ### Now add in scatterplot
+
+```{r}
+plot(SIMS~GRIP,data=data)
+```
 
 
 ### Numerical results 
