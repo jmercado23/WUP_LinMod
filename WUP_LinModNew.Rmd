@@ -45,7 +45,13 @@ This scatter plot looks to be going more towards the right. So maybe it's a posi
 cor(SIMS~ARM,data=data)
 ```
 
+
 ### Inferential  (Build model.1)
+```{r}
+model.1 <- lm(SIMS~ARM,data=data)
+summary.lm(model.1)
+```
+
 
 #### Predict at target point
 
